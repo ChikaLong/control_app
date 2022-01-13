@@ -1,6 +1,6 @@
 <h1>ログイン</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
+<%= form_with scope: :session, url: login_path, remote: true do |f| %>
   <div class="form-group">
     <%= f.label :email, "メールアドレス" %>
     <%= f.email_field :email, class: "form-control" %>
