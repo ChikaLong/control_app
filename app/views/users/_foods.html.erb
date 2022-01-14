@@ -1,7 +1,17 @@
-<%= month_calendar events: foods do |date, foods| %>
-  <%= date.day %>
+<div class="row">
+  <div class="col">
+    <h3>期限の近いものはありませんか？</h3>
 
-  <% foods.each do |food| %>
-    <%= link_to food.name, food_path(food) %>
-  <% end %>
-<% end %>
+    <div>
+      <%= link_to "期限の管理画面へ行く＞", foods_path %>
+    </div>
+
+    <%= month_calendar events: foods do |date, foods| %>
+      <%= date.day %>
+
+      <% foods.each do |food| %>
+        <%= link_to food.name, food_path(food) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

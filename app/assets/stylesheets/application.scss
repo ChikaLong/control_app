@@ -17,3 +17,66 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+$cHover: #FFC890;
+$cBlack: black;
+$cHeader: #FCE4CC;
+$cEditBtn: #80CE03;
+$cDeleteBtn: #E32904;
+$cFormBtn: #E17C02;
+
+// ヘッダーのレイアウト
+
+.header{
+  background-color: $cHeader;
+}
+
+.header-list{
+  text-align: center;
+
+  &:hover{
+    background-color: $cHover;
+  }
+
+  & .link{
+    color: $cBlack;
+  }
+}
+
+
+// 要素が少ないページ向け
+.main-item{
+  height: 100vh;
+}
+
+
+// ボタンのレイアウト
+.edit-btn{
+  border: 2px solid $cEditBtn !important;
+  color: $cEditBtn !important;
+
+  &:hover{
+    background-color: $cEditBtn;
+    color: white !important;
+  }
+}
+
+.delete-btn{
+  border: 2px solid $cDeleteBtn !important;
+  color: $cDeleteBtn !important;
+
+  &:hover{
+    background-color: $cDeleteBtn;
+    color: white !important;
+  }
+}
+
+.form-btn{
+  border: 2px solid $cFormBtn !important;
+  color: $cFormBtn !important;
+
+  &:hover{
+    background-color: $cFormBtn;
+    color: white !important;
+  }
+}
