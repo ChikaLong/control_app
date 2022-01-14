@@ -1,0 +1,9 @@
+<div><%= attachment_image_tag @food, :image, :fill,100,100 %></div>
+
+<table>
+  <tr><%= @food.name %></tr>
+  <tr><%= @food.food_category.name %></tr>
+  <tr><%= @food.start_time.strftime('%Y/%m/%d') %>></tr>
+  <tr><%= link_to "修正", edit_food_path(@food) %></tr>
+  <tr><%= link_to "削除", food_path(@food), method: :delete, data: { confirm: "削除しますか？" } %></tr>
+</table>
