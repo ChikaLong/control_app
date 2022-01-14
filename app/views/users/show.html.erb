@@ -1,3 +1,17 @@
 <h1>マイページ</h1>
 
 <%= @user.name %>
+
+<div>
+  <%= link_to "期限を管理する", foods_path %>
+  <%= link_to "食品のカテゴリ追加", new_food_category_path %>
+</div>
+
+
+<%= month_calendar events: @foods do |date, foods| %>
+  <%= date.day %>
+
+  <% foods.each do |food| %>
+    <%= link_to food.name, food_path(food) %>
+  <% end %>
+<% end %>

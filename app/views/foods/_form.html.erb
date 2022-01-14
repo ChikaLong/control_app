@@ -1,0 +1,30 @@
+<%= form_with model: food, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :image, "画像" %>
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name, "商品名" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :memo, "メモ" %>
+    <%= f.text_area :memo, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :food_category, "カテゴリ" %>
+    <%= f.collection_select(:food_category_id, FoodCategory.all, :id, :name, {include_blank: "--カテゴリ--"}, {class: "form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_time, "賞味期限(消費期限)" %>
+    <%= f.date_field :start_time %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit btn_text %>
+  </div>
+<% end %>
