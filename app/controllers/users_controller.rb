@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @foods = Food.all
+    @items = Item.few
   end
 
   def new

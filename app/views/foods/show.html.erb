@@ -1,9 +1,22 @@
-<div><%= attachment_image_tag @food, :image, :fill,100,100 %></div>
+<h2><%= @food.name %></h2>
+
+<div><%= attachment_image_tag @food, :image, :fill,100,100, fallback: "no-image.png", size: "100x100" %></div>
 
 <table>
-  <tr><%= @food.name %></tr>
-  <tr><%= @food.food_category.name %></tr>
-  <tr><%= @food.start_time.strftime('%Y/%m/%d') %>></tr>
-  <tr><%= link_to "修正", edit_food_path(@food) %></tr>
-  <tr><%= link_to "削除", food_path(@food), method: :delete, data: { confirm: "削除しますか？" } %></tr>
+  <tr>
+    <th>カテゴリ</th>
+    <td><%= @food.food_category.name %></td>
+  </tr>
+  <tr>
+    <th>期限</th>
+    <td><%= @food.start_time.strftime('%Y/%m/%d') %></td>
+  </tr>
+  <tr>
+    <th>メモ</th>
+    <td><%= @food.memo %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "修正", edit_food_path(@food) %></td>
+    <td><%= link_to "削除", food_path(@food), method: :delete, data: { confirm: "削除しますか？" } %></td>
+  </tr>
 </table>
