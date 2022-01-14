@@ -1,0 +1,7 @@
+<%= month_calendar events: foods do |date, foods| %>
+  <%= date.day %>
+
+  <% foods.each do |food| %>
+    <%= link_to food.name, food_path(food) %>
+  <% end %>
+<% end %>

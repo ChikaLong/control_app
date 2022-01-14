@@ -29,3 +29,17 @@ FoodCategory.create!(
     {name: 'その他'}
   ]
 )
+
+ItemCategory.create!(
+  [
+    {name: '洗濯用品'},
+    {name: 'キッチン用品'},
+    {name: 'お風呂用品'},
+    {name: '掃除用品'},
+    {name: '美容用品'},
+    {name: 'ケア用品'},
+    {name: '薬類'},
+    {name: '日用雑貨'},
+    {name: 'その他消耗品'}
+  ]
+)

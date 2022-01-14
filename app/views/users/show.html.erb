@@ -4,14 +4,14 @@
 
 <div>
   <%= link_to "期限を管理する", foods_path %>
-  <%= link_to "食品のカテゴリ追加", new_food_category_path %>
 </div>
 
+<div>
+  <%= link_to "在庫を管理する", items_path %>
+</div>
 
-<%= month_calendar events: @foods do |date, foods| %>
-  <%= date.day %>
+<!--期限をカレンダーで表示-->
+<%= render "users/foods", foods: @foods %>
 
-  <% foods.each do |food| %>
-    <%= link_to food.name, food_path(food) %>
-  <% end %>
-<% end %>
+<!--在庫の少ないitem-->
+<%= render "users/items", items: @items %>

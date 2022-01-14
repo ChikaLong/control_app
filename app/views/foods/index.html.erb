@@ -3,15 +3,27 @@
 <%= render "foods/form", food: @food %>
 
 <table>
-  <% @foods.each do |food| %>
+  <thead>
     <tr>
-      <td><%= attachment_image_tag food, :image, :fill,30,30 %></td>
-      <td><%= link_to food.name, food_path(food) %></td>
-      <td><%= food.food_category.name %></td>
-      <td><%= truncate(food.memo, length: 20) %></td>
-      <td><%= food.start_time.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to "修正", edit_food_path(food) %></td>
-      <td><%= link_to "削除", food_path(food), method: :delete, data: { confirm: "削除しますか？" } %></td>
+      <th></th>
+      <th>商品名</th>
+      <th>カテゴリ</th>
+      <th>期限</th>
+      <th>メモ</th>
+      <th colspan="2"></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= attachment_image_tag food, :image, :fill,30,30, fallback: "no-image.png", size: "30x30" %></td>
+        <td><%= link_to food.name, food_path(food) %></td>
+        <td><%= food.food_category.name %></td>
+        <td><%= food.start_time.strftime('%Y/%m/%d') %></td>
+        <td><%= truncate(food.memo, length: 20) %></td>
+        <td><%= link_to "修正", edit_food_path(food) %></td>
+        <td><%= link_to "削除", food_path(food), method: :delete, data: { confirm: "削除しますか？" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
