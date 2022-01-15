@@ -6,8 +6,14 @@
       <li class="nav-list"><%= link_to "マイページ", user_path(current_user), class: "link" %></li>
       <li class="nav-list"><%= link_to "期限管理", foods_path, class: "link" %></li>
       <li class="nav-list"><%= link_to "在庫管理", items_path, class: "link" %></li>
-      <li class="nav-list"><%= link_to "ログアウト", logout_path, method: :delete, class: "link" %></li>
-      <li class="nav-list"><%= link_to "退会", user_path(current_user), method: :delete, data: {confirm: "退会しますか？"}, class: "link" %></li>
+      <li class="nav-list">
+        <details>
+          <summary>マイメニュー</summary>
+            <div class="my-menu">登録情報修正</div>
+            <div class="my-menu"><%= link_to "ログアウト", logout_path, method: :delete, class: "link" %></div>
+            <div class="my-menu"><%= link_to "退会", confirm_path, class: "link" %></div>
+        </details>
+      </li>
     <% else %>
       <li class="nav-list"><%= link_to "トップ", root_path, class: "link" %></li>
       <li class="nav-list"><%= link_to "新規登録", signup_path, class: "link" %></li>

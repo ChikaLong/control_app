@@ -1,0 +1,13 @@
+<div class="row main-item">
+  <div class="col">
+    <div class="text-center">
+      <h2>退会確認</h2>
+      <p>
+        退会すると期限管理・在庫管理の内容が全て削除されます。<br>
+        退会後復元させることはできません。
+      </p>
+      <h4>退会しますか？</h4>
+      <%= link_to "退会", user_path(current_user), method: :delete, data: {confirm: "退会します"}, class: "btn btn-outline-danger" %>
+    </div>
+  </div>
+</div>
