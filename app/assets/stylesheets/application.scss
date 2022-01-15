@@ -18,7 +18,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-$cNavHover: #FFC890;
+$cHover: #FFC890;
 $cLink: black;
 $cHeaderTop: #FDCB8E;
 $cHeaderBottom: #FFFFFF;
@@ -30,25 +30,30 @@ $cSortBtn: #616262;
 // ヘッダーのレイアウト
 
 .header{
-  background: -moz-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
-  background: -webkit-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
-  background: linear-gradient(to bottom, $cHeaderTop, $cHeaderBottom);
+  // background: -moz-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  // background: -webkit-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  // background: linear-gradient(to bottom, $cHeaderTop, $cHeaderBottom);
+  background-image: url(orange2.png);
+  background-size: cover;
+  z-index: 2;
+}
+
+.header-back{
+  background-color: white;
+  z-index: 1;
 }
 
 .nav-list{
   list-style: none;
-
-  &:hover{
-    background-color: $cNavHover;
-  }
+  padding: 1.25rem 0 1.25rem 0;
 
   & .link{
     color: $cLink;
   }
 }
 
-.nav-list{
-  padding: 1.25rem;
+.my-menu{
+  padding: 0.5rem;
 }
 
 // 要素が少ないページのため
@@ -115,7 +120,7 @@ $cSortBtn: #616262;
     padding: 5px 0;
 
     &:hover{
-      background-color: $cNavHover;
+      background-color: $cHover;
     }
 
     & .link{
