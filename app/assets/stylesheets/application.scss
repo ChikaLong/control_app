@@ -25,6 +25,7 @@ $cHeaderBottom: #FFFFFF;
 $cEditBtn: #80CE03;
 $cDeleteBtn: #E32904;
 $cFormBtn: #E17C02;
+$cSortBtn: #616262;
 
 // ヘッダーのレイアウト
 
@@ -47,12 +48,10 @@ $cFormBtn: #E17C02;
   }
 }
 
-
-// 要素が少ないページ向け
+// 要素が少ないページのため
 .main-item{
   height: 100vh;
 }
-
 
 // ボタンのレイアウト
 .edit-btn{
@@ -85,6 +84,42 @@ $cFormBtn: #E17C02;
   }
 }
 
+.sort-btn{
+  border: 1px solid $cSortBtn !important;
+  color: $cSortBtn !important;
+
+  &:hover{
+    background-color: $cSortBtn;
+    color: white !important;
+  }
+}
+
+.sort-item{
+  text-align: right;
+}
+
+.category-btn{
+  background-color: white;
+  padding: 0.3rem 1.2rem;
+  border: 1.5px solid black;
+  border-radius: 5px;
+
+  &__list{
+    text-align: center;
+  }
+
+  &__item{
+    padding: 5px 0;
+
+    &:hover{
+      background-color: $cNavHover;
+    }
+
+    & .link{
+      color: $cLink;
+    }
+  }
+}
 
 @media screen and (max-width: 991px){
   .header-item,

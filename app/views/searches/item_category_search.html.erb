@@ -4,18 +4,16 @@
 
     <%= render "items/form", item: @item %>
 
-    <%= @item_category.name %>
-
     <%= render "items/categories", item_categories: @item_categories %>
+    <span>絞り込み＞<%= @item_category.name %></span>
 
     <% if @items.empty? %>
-      <div>絞り込み＞<%= @item_category.name %></div>
       <p>このカテゴリに該当する商品の登録がありません</p>
     <% else %>
-      <div class="mt-3">絞り込み＞<%= @item_category.name %></div>
-
-      <%= link_to "在庫少ない順　", item_category_search_path(sort_few_items: "true", item_category_id: @item_category.id) %>
-      <%= link_to "　在庫多い順", item_category_search_path(sort_many_items: "true", item_category_id: @item_category.id) %>
+      <div class="sort-item mb-2">
+        <%= link_to "在庫少ない順", item_category_search_path(sort_few_items: "true", item_category_id: @item_category.id), class: "btn sort-btn" %>
+        <%= link_to "在庫多い順", item_category_search_path(sort_many_items: "true", item_category_id: @item_category.id), class: "btn sort-btn" %>
+      </div>
 
       <%= render "items/list", items: @items %>
     <% end %>
