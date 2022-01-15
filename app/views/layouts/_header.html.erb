@@ -9,7 +9,7 @@
       <li class="nav-list">
         <details>
           <summary>マイメニュー</summary>
-            <div class="my-menu">登録情報修正</div>
+            <div class="my-menu"><%= link_to "登録情報変更", edit_user_path(current_user), class: "link" %></div>
             <div class="my-menu"><%= link_to "ログアウト", logout_path, method: :delete, class: "link" %></div>
             <div class="my-menu"><%= link_to "退会", confirm_path, class: "link" %></div>
         </details>
