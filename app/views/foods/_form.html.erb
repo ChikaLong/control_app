@@ -2,8 +2,9 @@
   <div class="row mt-4">
     <div class="col-xl-4">
       <div class="form-group">
-        <%= f.label :image, "画像" %>
-        <%= f.attachment_field :image %>
+        <%= f.label :image, "画像" %><br>
+        <%= attachment_image_tag food, :image, :fill,150,150, fallback: "no-image.png", id: "img_prev", size: "150x150" %>
+        <%= f.attachment_field :image, class: "mt-2" %>
       </div>
     </div>
 

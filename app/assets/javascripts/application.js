@@ -18,3 +18,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+/*global $*/
+
+
+// 画像プレビュー
+$(document).on("turbolinks:load", function(){
+  $('#food_image, #item_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#img_prev').attr('src', e.target.result);
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
