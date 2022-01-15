@@ -25,6 +25,7 @@ $cHeaderBottom: #FFFFFF;
 $cEditBtn: #80CE03;
 $cDeleteBtn: #E32904;
 $cFormBtn: #E17C02;
+$cSortBtn: #616262;
 
 // ヘッダーのレイアウト
 
@@ -36,7 +37,6 @@ $cFormBtn: #E17C02;
 
 .nav-list{
   list-style: none;
-  // padding: 1.5rem;
 
   &:hover{
     background-color: $cNavHover;
@@ -47,12 +47,14 @@ $cFormBtn: #E17C02;
   }
 }
 
+.nav-list{
+  padding: 1.25rem;
+}
 
-// 要素が少ないページ向け
+// 要素が少ないページのため
 .main-item{
   height: 100vh;
 }
-
 
 // ボタンのレイアウト
 .edit-btn{
@@ -85,18 +87,70 @@ $cFormBtn: #E17C02;
   }
 }
 
+.sort-btn{
+  border: 1px solid $cSortBtn !important;
+  color: $cSortBtn !important;
+
+  &:hover{
+    background-color: $cSortBtn;
+    color: white !important;
+  }
+}
+
+.sort-item{
+  text-align: right;
+}
+
+.category-btn{
+  background-color: white;
+  padding: 0.3rem 1.2rem;
+  border: 1.5px solid black;
+  border-radius: 5px;
+
+  &__list{
+    text-align: center;
+  }
+
+  &__item{
+    padding: 5px 0;
+
+    &:hover{
+      background-color: $cNavHover;
+    }
+
+    & .link{
+      color: $cLink;
+    }
+  }
+}
 
 @media screen and (max-width: 991px){
+  .body{
+    position: relative;
+  }
+
+  main{
+    padding-top: 150px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
   .header-item,
   .nav-item{
     display: flex;
   }
 
   .nav-item{
-    padding: 3.25rem;
+    align-items: center;
   }
 
   .nav-list{
-    margin-right: 3rem;
+    padding: 0;
+    margin-right: 1.5rem;
   }
 }

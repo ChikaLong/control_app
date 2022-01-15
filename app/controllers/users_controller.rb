@@ -13,10 +13,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to user_path(@user), notice: "ユーザーを登録しました"
+      redirect_to user_path(@user), notice: "ようこそ"
     else
       render :new
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:notice] = "ご利用ありがとうございました"
+    redirect_to root_path
   end
 
   private
