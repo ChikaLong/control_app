@@ -1,22 +1,37 @@
-<h2><%= @item.name %></h2>
+<div class="row main-item mt-5">
+  <div class="col">
+    <h5 class="mb-5">在庫管理＞登録内容詳細</h5>
 
-<div><%= attachment_image_tag @item, :image, :fill,100,100, fallback: "no-image.png", size: "100x100" %></div>
+    <div class="row">
+      <div class="col-3">
+        <%= attachment_image_tag @item, :image, :fill,150,150, fallback: "no-image.png", size: "150x150" %>
+      </div>
+      <div class="col-9">
+        <h2><%= @item.name %></h2>
+      </div>
+    </div>
 
-<table>
-  <tr>
-    <th>カテゴリ</th>
-    <td><%= @item.item_category.name %></td>
-  </tr>
-  <tr>
-    <th>個数</th>
-    <td><%= @food.quantity %></td>
-  </tr>
-  <tr>
-    <th>メモ</th>
-    <td><%= @food.memo %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "修正", edit_item_path(@item) %></td>
-    <td><%= link_to "削除", item_path(@item), method: :delete, data: { confirm: "削除しますか？" } %></td>
-  </tr>
-</table>
+    <table class="table mt-4">
+      <tr>
+        <th>カテゴリ</th>
+        <td><%= @item.item_category.name %></td>
+      </tr>
+      <tr>
+        <th>個数</th>
+        <td><%= @item.quantity %></td>
+      </tr>
+      <tr>
+        <th style="width: 20%;">メモ</th>
+        <td style="width: 80%;"><%= @item.memo %></td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <%= link_to "修正", edit_item_path(@item), class: "btn edit-btn mr-2" %>
+          <%= link_to "削除", item_path(@item), method: :delete, data: { confirm: "削除しますか？" }, class: "btn delete-btn ml-2" %>
+        </td>
+      </tr>
+    </table>
+
+    <%= link_to "←戻る", items_path %>
+  </div>
+</div>

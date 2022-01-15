@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+$cNavHover: #FFC890;
+$cLink: black;
+$cHeaderTop: #FDCB8E;
+$cHeaderBottom: #FFFFFF;
+$cEditBtn: #80CE03;
+$cDeleteBtn: #E32904;
+$cFormBtn: #E17C02;
+
+// ヘッダーのレイアウト
+
+.header{
+  background: -moz-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  background: -webkit-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  background: linear-gradient(to bottom, $cHeaderTop, $cHeaderBottom);
+}
+
+.nav-list{
+  list-style: none;
+  padding: 1.5rem;
+
+  &:hover{
+    background-color: $cNavHover;
+  }
+
+  & .link{
+    color: $cLink;
+  }
+}
+
+
+// 要素が少ないページ向け
+.main-item{
+  height: 100vh;
+}
+
+
+// ボタンのレイアウト
+.edit-btn{
+  border: 2px solid $cEditBtn !important;
+  color: $cEditBtn !important;
+
+  &:hover{
+    background-color: $cEditBtn;
+    color: white !important;
+  }
+}
+
+.delete-btn{
+  border: 2px solid $cDeleteBtn !important;
+  color: $cDeleteBtn !important;
+
+  &:hover{
+    background-color: $cDeleteBtn;
+    color: white !important;
+  }
+}
+
+.form-btn{
+  border: 2px solid $cFormBtn !important;
+  color: $cFormBtn !important;
+
+  &:hover{
+    background-color: $cFormBtn;
+    color: white !important;
+  }
+}
+
+
+@media screen and (max-width: 992px){
+  .header-item,
+  .nav-item{
+    display: flex;
+  }
+
+  .nav-item{
+    padding: 3.25rem;
+  }
+
+  .nav-list{
+    margin-right: 3rem;
+  }
+}

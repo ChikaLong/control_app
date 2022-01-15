@@ -1,17 +1,13 @@
-<h1>マイページ</h1>
+<div class="row">
+  <div class="col">
+    <h1>マイページ</h1>
 
-<%= @user.name %>
+    <%= @user.name %>
 
-<div>
-  <%= link_to "期限を管理する", foods_path %>
+    <!--期限をカレンダーで表示-->
+    <%= render "users/foods", foods: @foods %>
+
+    <!--在庫の少ないitem-->
+    <%= render "users/items", items: @items %>
+  </div>
 </div>
-
-<div>
-  <%= link_to "在庫を管理する", items_path %>
-</div>
-
-<!--期限をカレンダーで表示-->
-<%= render "users/foods", foods: @foods %>
-
-<!--在庫の少ないitem-->
-<%= render "users/items", items: @items %>
