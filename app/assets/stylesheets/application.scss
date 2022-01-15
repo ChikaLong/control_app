@@ -36,7 +36,7 @@ $cFormBtn: #E17C02;
 
 .nav-list{
   list-style: none;
-  padding: 1.5rem;
+  // padding: 1.5rem;
 
   &:hover{
     background-color: $cNavHover;
@@ -86,7 +86,7 @@ $cFormBtn: #E17C02;
 }
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 991px){
   .header-item,
   .nav-item{
     display: flex;

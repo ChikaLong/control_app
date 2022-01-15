@@ -1,31 +1,18 @@
-<h2>期限の管理</h2>
+<div class="row main-item">
+  <div class="col">
+    <h2>期限の管理</h2>
 
-<%= render "foods/form", food: @food %>
+    <%= render "foods/form", food: @food %>
 
-<table class="table mt-5">
-  <thead>
-    <tr>
-      <th></th>
-      <th>商品名</th>
-      <th>カテゴリ</th>
-      <th>期限</th>
-      <th style="width: 30%;">メモ</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= attachment_image_tag food, :image, :fill,50,50, fallback: "no-image.png", size: "50x50" %></td>
-        <td><%= link_to food.name, food_path(food) %></td>
-        <td><%= food.food_category.name %></td>
-        <td><%= food.start_time.strftime('%Y/%m/%d') %></td>
-        <td><%= truncate(food.memo, length: 15) %></td>
-        <td><%= link_to "修正", edit_food_path(food), class: "btn edit-btn" %></td>
-        <td><%= link_to "削除", food_path(food), method: :delete, data: { confirm: "削除しますか？" }, class: "btn delete-btn" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= render "foods/categories", food_categories: @food_categories %>
 
-<%= link_to "←マイページに戻る", user_path(current_user) %>
+    <div class="mt-3">
+      <%= link_to "期限の短い順", foods_path(sort_short_foods: "true") %>
+      <%= link_to "期限の長い順", foods_path(sort_long_foods: "true") %>
+    </div>
+
+    <%= render "foods/list", foods: @foods %>
+
+    <%= link_to "←マイページに戻る", user_path(current_user) %>
+  </div>
+</div>

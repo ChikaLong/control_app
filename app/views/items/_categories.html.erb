@@ -1,0 +1,12 @@
+<div class="btn-group dropright">
+  <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    カテゴリで絞る
+  </button>
+  <div class="dropdown-menu">
+    <div>
+      <% item_categories.each do |item_category| %>
+        <div><%= link_to item_category.name, item_category_search_path(item_category_id: item_category.id) %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
