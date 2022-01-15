@@ -1,17 +1,22 @@
-<h1>ログイン</h1>
+<div class="row main-item mt-5">
+  <div class="offset-2 col-8">
+    <h2 class="text-center">ログイン</h2>
 
-<%= form_with scope: :session, url: login_path, remote: true do |f| %>
-  <div class="form-group">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, class: "form-control" %>
-  </div>
+    <%= form_with scope: :session, url: login_path, remote: true do |f| %>
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :password, "パスワード" %>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
+      <div class="form-group">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.submit "ログイン" %>
+      <div class="form-group text-center">
+        <%= f.submit "ログイン", class: "btn form-btn" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+

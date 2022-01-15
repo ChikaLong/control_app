@@ -37,7 +37,6 @@ $cSortBtn: #616262;
 
 .nav-list{
   list-style: none;
-  // padding: 1.5rem;
 
   &:hover{
     background-color: $cNavHover;
@@ -46,6 +45,10 @@ $cSortBtn: #616262;
   & .link{
     color: $cLink;
   }
+}
+
+.nav-list{
+  padding: 1.25rem;
 }
 
 // 要素が少ないページのため
@@ -122,16 +125,32 @@ $cSortBtn: #616262;
 }
 
 @media screen and (max-width: 991px){
+  .body{
+    position: relative;
+  }
+
+  main{
+    padding-top: 150px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
   .header-item,
   .nav-item{
     display: flex;
   }
 
   .nav-item{
-    padding: 3.25rem;
+    align-items: center;
   }
 
   .nav-list{
-    margin-right: 3rem;
+    padding: 0;
+    margin-right: 1.5rem;
   }
 }
