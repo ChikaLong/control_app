@@ -1,15 +1,16 @@
-<h2 class="text-center p-5">管理</h2>
-
-<table class="table table-borderless">
-  <% if logged_in? %>
-    <tr class="header-list"><td><%= link_to "トップ", root_path, class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "マイページ", user_path(current_user), class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "期限管理", foods_path, class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "在庫管理", items_path, class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "ログアウト", logout_path, method: :delete, class: "link" %></td></tr>
-  <% else %>
-    <tr class="header-list"><td><%= link_to "トップ", root_path, class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "新規登録", signup_path, class: "link" %></td></tr>
-    <tr class="header-list"><td><%= link_to "ログイン", login_path, class: "link" %></td></tr>
-  <% end %>
-</table>
+<div class="header-item">
+  <h2 class="text-center p-5">管理</h2>
+  <ul class="nav-item">
+    <% if logged_in? %>
+      <li class="nav-list"><%= link_to "トップ", root_path, class: "link" %></li>
+      <li class="nav-list"><%= link_to "マイページ", user_path(current_user), class: "link" %></li>
+      <li class="nav-list"><%= link_to "期限管理", foods_path, class: "link" %></li>
+      <li class="nav-list"><%= link_to "在庫管理", items_path, class: "link" %></li>
+      <li class="nav-list"><%= link_to "ログアウト", logout_path, method: :delete, class: "link" %></li>
+    <% else %>
+      <li class="nav-list"><%= link_to "トップ", root_path, class: "link" %></li>
+      <li class="nav-list"><%= link_to "新規登録", signup_path, class: "link" %></li>
+      <li class="nav-list"><%= link_to "ログイン", login_path, class: "link" %></li>
+    <% end %>
+  </ul>
+</div>

@@ -18,9 +18,10 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-$cHover: #FFC890;
-$cBlack: black;
-$cHeader: #FCE4CC;
+$cNavHover: #FFC890;
+$cLink: black;
+$cHeaderTop: #FDCB8E;
+$cHeaderBottom: #FFFFFF;
 $cEditBtn: #80CE03;
 $cDeleteBtn: #E32904;
 $cFormBtn: #E17C02;
@@ -28,18 +29,21 @@ $cFormBtn: #E17C02;
 // ヘッダーのレイアウト
 
 .header{
-  background-color: $cHeader;
+  background: -moz-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  background: -webkit-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  background: linear-gradient(to bottom, $cHeaderTop, $cHeaderBottom);
 }
 
-.header-list{
-  text-align: center;
+.nav-list{
+  list-style: none;
+  padding: 1.5rem;
 
   &:hover{
-    background-color: $cHover;
+    background-color: $cNavHover;
   }
 
   & .link{
-    color: $cBlack;
+    color: $cLink;
   }
 }
 
@@ -78,5 +82,21 @@ $cFormBtn: #E17C02;
   &:hover{
     background-color: $cFormBtn;
     color: white !important;
+  }
+}
+
+
+@media screen and (max-width: 992px){
+  .header-item,
+  .nav-item{
+    display: flex;
+  }
+
+  .nav-item{
+    padding: 3.25rem;
+  }
+
+  .nav-list{
+    margin-right: 3rem;
   }
 }

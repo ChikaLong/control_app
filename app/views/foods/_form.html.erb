@@ -1,13 +1,13 @@
 <%= form_with model: food, local: true do |f| %>
   <div class="row mt-4">
-    <div class="col-4">
+    <div class="col-xl-4">
       <div class="form-group">
         <%= f.label :image, "画像" %>
         <%= f.attachment_field :image %>
       </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-xl-8">
       <div class="form-group">
         <%= f.label :name, "商品名" %>
         <%= f.text_field :name, class: "form-control" %>
