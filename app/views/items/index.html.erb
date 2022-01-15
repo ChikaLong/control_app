@@ -2,6 +2,9 @@
 
 <%= render "items/form", item: @item %>
 
+<%= link_to "在庫少ない順　", items_path(sort_few_items: "true") %>
+<%= link_to "　在庫多い順", items_path(sort_many_items: "true") %>
+
 <table class="table mt-5">
   <thead>
     <tr>

@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    if params[:sort_few_items]
+      @items = Item.few_items
+    elsif params[:sort_many_items]
+      @items = Item.many_items
+    else
+      @items = Item.all
+    end
     @item = Item.new
     @item_category = @item.item_category
     @item_categories = ItemCategory.all

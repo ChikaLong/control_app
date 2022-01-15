@@ -6,4 +6,8 @@ class Food < ApplicationRecord
   validates :start_time, presence: true
 
   attachment :image
+
+  # ソート機能
+  scope :short_foods, -> { order(start_time: :asc) }
+  scope :long_foods, -> { order(start_time: :desc) }
 end

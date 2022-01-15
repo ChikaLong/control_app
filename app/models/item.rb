@@ -9,4 +9,8 @@ class Item < ApplicationRecord
 
   # 在庫の少ないitemをマイページに表示
   scope :few, -> { order(quantity: :asc).limit(5) }
+
+  # ソート機能関連
+  scope :few_items, -> { order(quantity: :asc) }
+  scope :many_items, -> { order(quantity: :desc) }
 end

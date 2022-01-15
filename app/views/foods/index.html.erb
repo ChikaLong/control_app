@@ -2,6 +2,9 @@
 
 <%= render "foods/form", food: @food %>
 
+<%= link_to "期限の短い順", foods_path(sort_short_foods: "true") %>
+<%= link_to "期限の長い順", foods_path(sort_long_foods: "true") %>
+
 <table class="table mt-5">
   <thead>
     <tr>

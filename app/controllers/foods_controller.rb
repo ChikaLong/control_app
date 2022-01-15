@@ -1,6 +1,12 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
+    if params[:sort_short_foods]
+      @foods = Food.short_foods
+    elsif params[:sort_long_foods]
+      @foods = Food.long_foods
+    else
+      @foods = Food.all
+    end
     @food = Food.new
     @food_category = @food.food_category
     @food_categories = FoodCategory.all
