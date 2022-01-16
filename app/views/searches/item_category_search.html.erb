@@ -2,13 +2,11 @@
   <div class="col">
     <h2>在庫管理</h2>
 
-    <%= render "items/form", item: @item %>
-
     <%= render "items/categories", item_categories: @item_categories %>
     <span>絞り込み＞<%= @item_category.name %></span>
 
     <% if @items.empty? %>
-      <p>このカテゴリに該当する商品の登録がありません</p>
+      <div class="my-4">このカテゴリに該当する商品の登録がありません</div>
     <% else %>
       <div class="sort-item mb-2">
         <%= link_to "在庫少ない順", item_category_search_path(sort_few_items: "true", item_category_id: @item_category.id), class: "btn sort-btn" %>
@@ -19,5 +17,9 @@
     <% end %>
 
     <%= link_to "←一覧へ戻る", items_path %>
+
+    <Hr class="my-5">
+
+    <%= render "items/form", item: @item %>
   </div>
 </div>

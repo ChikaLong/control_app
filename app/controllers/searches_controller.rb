@@ -2,11 +2,11 @@ class SearchesController < ApplicationController
   def food_category_search
     @food_category = FoodCategory.find(params[:food_category_id])
     if params[:sort_short_foods]
-      @foods = @food_category.foods.short_foods
+      @foods = @food_category.foods.short_foods.page(params[:page]).per(10)
     elsif params[:sort_long_foods]
-      @foods = @food_category.foods.long_foods
+      @foods = @food_category.foods.long_foods.page(params[:page]).per(10)
     else
-      @foods = @food_category.foods.all
+      @foods = @food_category.foods.page(params[:page]).per(10)
     end
     @food_categories = FoodCategory.all
     @food = Food.new

@@ -129,6 +129,15 @@ $cSortBtn: #616262;
   }
 }
 
+// ページネーション
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  color: #808080;
+}
+
 @media screen and (max-width: 991px){
   .body{
     position: relative;

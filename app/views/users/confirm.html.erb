@@ -7,7 +7,8 @@
         退会後復元させることはできません。
       </p>
       <h4>退会しますか？</h4>
-      <%= link_to "退会", user_path(current_user), method: :delete, data: {confirm: "退会します"}, class: "btn btn-outline-danger" %>
+      <div><%= link_to "退会", user_path(current_user), method: :delete, data: {confirm: "退会します"}, class: "btn btn-outline-danger" %></div>
+      <div><%= link_to "やめる(マイページに戻ります)", user_path(current_user) %></div>
     </div>
   </div>
 </div>

@@ -2,8 +2,6 @@
   <div class="col">
     <h2>期限管理</h2>
 
-    <%= render "foods/form", food: @food %>
-
     <%= render "foods/categories", food_categories: @food_categories %>
 
     <div class="sort-item mb-2">
@@ -14,5 +12,9 @@
     <%= render "foods/list", foods: @foods %>
 
     <%= link_to "←マイページに戻る", user_path(current_user) %>
+
+    <Hr class="my-5">
+
+    <%= render "foods/form", food: @food %>
   </div>
 </div>

@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   def index
     if params[:sort_few_items]
-      @items = Item.few_items
+      @items = Item.few_items.page(params[:page]).per(10)
     elsif params[:sort_many_items]
-      @items = Item.many_items
+      @items = Item.many_items.page(params[:page]).per(10)
     else
-      @items = Item.all
+      @items = Item.page(params[:page]).per(10)
     end
     @item = Item.new
     @item_category = @item.item_category
