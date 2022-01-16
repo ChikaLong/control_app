@@ -2,8 +2,6 @@
   <div class="col">
     <h2>在庫管理</h2>
 
-    <%= render "items/form", item: @item %>
-
     <%= render "items/categories", item_categories: @item_categories %>
 
     <div class="sort-item mb-2">
@@ -14,5 +12,9 @@
     <%= render "items/list", items: @items %>
 
     <%= link_to "←マイページに戻る", user_path(current_user) %>
+
+    <Hr class="my-5">
+
+    <%= render "items/form", item: @item %>
   </div>
 </div>
