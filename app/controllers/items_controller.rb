@@ -1,11 +1,14 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user
+
   def index
+    @user = User.find(current_user.id)
     if params[:sort_few_items]
-      @items = Item.few_items.page(params[:page]).per(10)
+      @items = @user.items.few_items.page(params[:page]).per(10)
     elsif params[:sort_many_items]
-      @items = Item.many_items.page(params[:page]).per(10)
+      @items = @user.items.many_items.page(params[:page]).per(10)
     else
-      @items = Item.page(params[:page]).per(10)
+      @items = @user.items.page(params[:page]).per(10)
     end
     @item = Item.new
     @item_category = @item.item_category
@@ -13,16 +16,18 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
     @item = Item.find(params[:id])
   end
 
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @user = User.find(current_user.id)
     if @item.save
       redirect_to items_path
     else
-      @items = Item.all
+      @items = @user.items.page(params[:page]).per(10)
       @item_categories = ItemCategory.all
       render :index
     end

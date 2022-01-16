@@ -108,7 +108,8 @@ $cSortBtn: #616262;
   }
 }
 
-.sort-item{
+.sort-item,
+.user-name{
   text-align: right;
 }
 
@@ -144,6 +145,12 @@ $cSortBtn: #616262;
   color: #808080;
 }
 
+// エラーメッセージ
+.alert-danger{
+  display: inline-block;
+}
+
+// レスポンシブ
 @media screen and (max-width: 991px){
   .body{
     position: relative;

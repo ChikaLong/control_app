@@ -1,11 +1,14 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user
+
   def index
+    @user = User.find(current_user.id)
     if params[:sort_short_foods]
-      @foods = Food.short_foods.page(params[:page]).per(10)
+      @foods = @user.foods.short_foods.page(params[:page]).per(10)
     elsif params[:sort_long_foods]
-      @foods = Food.long_foods.page(params[:page]).per(10)
+      @foods = @user.foods.long_foods.page(params[:page]).per(10)
     else
-      @foods = Food.page(params[:page]).per(10)
+      @foods = @user.foods.page(params[:page]).per(10)
     end
     @food = Food.new
     @food_category = @food.food_category
@@ -13,16 +16,18 @@ class FoodsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
     @food = Food.find(params[:id])
   end
 
   def create
     @food = Food.new(food_params)
     @food.user = current_user
+    @user = User.find(current_user.id)
     if @food.save
       redirect_to foods_path
     else
-      @foods = Food.all
+      @foods = @user.foods.page(params[:page]).per(10)
       @food_categories = FoodCategory.all
       render :index
     end

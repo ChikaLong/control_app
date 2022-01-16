@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :foods, dependent: :destroy
+  has_many :items, dependent: :destroy
 end
