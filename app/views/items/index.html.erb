@@ -2,7 +2,9 @@
   <div class="col">
     <h2>在庫管理</h2>
 
-    <%= render "items/categories", item_categories: @item_categories %>
+    <div class="mt-4">
+      <%= render "items/categories", item_categories: @item_categories %>
+    </div>
 
     <div class="sort-item mb-2">
       <%= link_to "在庫少ない順", items_path(sort_few_items: "true"), class: "btn sort-btn" %>

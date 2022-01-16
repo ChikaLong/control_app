@@ -56,6 +56,12 @@ $cSortBtn: #616262;
   padding: 0.5rem;
 }
 
+// topページ
+.top-text{
+  display: flex;
+  justify-content: center;
+}
+
 // 要素が少ないページのため
 .main-item{
   height: 100vh;
@@ -144,7 +150,7 @@ $cSortBtn: #616262;
   }
 
   main{
-    padding-top: 150px;
+    padding-top: 170px;
   }
 
   .header{

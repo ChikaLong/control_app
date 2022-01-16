@@ -2,8 +2,10 @@
   <div class="col">
     <h2>在庫管理</h2>
 
-    <%= render "items/categories", item_categories: @item_categories %>
-    <span>絞り込み＞<%= @item_category.name %></span>
+    <div class="mt-4">
+      <%= render "items/categories", item_categories: @item_categories %>
+      <span>絞り込み＞<%= @item_category.name %></span>
+    </div>
 
     <% if @items.empty? %>
       <div class="my-4">このカテゴリに該当する商品の登録がありません</div>

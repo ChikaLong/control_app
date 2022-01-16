@@ -15,11 +15,11 @@ class SearchesController < ApplicationController
   def item_category_search
     @item_category = ItemCategory.find(params[:item_category_id])
     if params[:sort_few_items]
-      @items = @item_category.items.few_items
+      @items = @item_category.items.few_items.page(params[:page]).per(10)
     elsif params[:sort_many_items]
-      @items = @item_category.items.many_items
+      @items = @item_category.items.many_items.page(params[:page]).per(10)
     else
-      @items = @item_category.items.all
+      @items = @item_category.items.page(params[:page]).per(10)
     end
     @item_categories = ItemCategory.all
     @item = Item.new
