@@ -1,11 +1,11 @@
 class FoodsController < ApplicationController
   def index
     if params[:sort_short_foods]
-      @foods = Food.short_foods
+      @foods = Food.short_foods.page(params[:page]).per(10)
     elsif params[:sort_long_foods]
-      @foods = Food.long_foods
+      @foods = Food.long_foods.page(params[:page]).per(10)
     else
-      @foods = Food.all
+      @foods = Food.page(params[:page]).per(10)
     end
     @food = Food.new
     @food_category = @food.food_category
