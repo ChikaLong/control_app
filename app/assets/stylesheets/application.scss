@@ -18,6 +18,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500&display=swap');
+
 $cHover: #FFC890;
 $cLink: black;
 $cHeaderTop: #FDCB8E;
@@ -26,6 +28,10 @@ $cEditBtn: #80CE03;
 $cDeleteBtn: #E32904;
 $cFormBtn: #E17C02;
 $cSortBtn: #616262;
+
+*{
+  font-family: 'M PLUS 2', sans-serif;
+}
 
 // ヘッダーのレイアウト
 
