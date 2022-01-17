@@ -58,6 +58,10 @@ h5{
   z-index: 1;
 }
 
+.header-logo{
+  text-align: center;
+}
+
 .nav-list{
   list-style: none;
   padding: 1.25rem 0 1.25rem 0;
@@ -187,17 +191,12 @@ h5{
     z-index: 1;
   }
 
-  .header-item,
-  .nav-item{
-    display: flex;
+  .header-logo{
+    text-align: start;
   }
 
-  .nav-item{
-    align-items: center;
-  }
-
-  .nav-list{
-    padding: 0;
-    margin-right: 1.5rem;
+  .header-nav{
+    align-self: center;
+    text-align: end;
   }
 }

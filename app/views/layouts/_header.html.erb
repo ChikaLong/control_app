@@ -1,25 +1,39 @@
 <div class="header-item sticky-top">
-  <div class="text-center p-4">
-    <%= link_to image_tag("logo2.png", alt: "食在管理", size: "150x110"), root_path %>
+  <div class="row">
+    <div class="col header-logo navbar-brand">
+      <div class="p-4">
+        <%= link_to image_tag("logo2.png", alt: "食在管理", size: "150x110"), root_path %>
+      </div>
+    </div>
+    <div class="col header-nav">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-brand"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav-item">
+            <% if logged_in? %>
+              <li class="nav-list"><i class="fas fa-home"></i><%= link_to " トップ", root_path, class: "link" %></li>
+              <li class="nav-list"><i class="fas fa-user"></i><%= link_to " マイページ", user_path(current_user), class: "link" %></li>
+              <li class="nav-list"><i class="fas fa-list-ul"></i><%= link_to " 期限管理", foods_path, class: "link" %></li>
+              <li class="nav-list"><i class="fas fa-list"></i><%= link_to " 在庫管理", items_path, class: "link" %></li>
+              <li class="nav-list">
+                <details>
+                  <summary>マイメニュー</summary>
+                    <div class="my-menu"><i class="fas fa-user-edit"></i><%= link_to " 登録情報変更", edit_user_path(current_user), class: "link" %></div>
+                    <div class="my-menu"><i class="fas fa-sign-out-alt"></i><%= link_to " ログアウト", logout_path, method: :delete, class: "link" %></div>
+                    <div class="my-menu"><i class="fas fa-user-slash"></i><%= link_to " 退会", confirm_path, class: "link" %></div>
+                </details>
+              </li>
+            <% else %>
+              <li class="nav-list"><i class="fas fa-home"></i><%= link_to " トップ", root_path, class: "link" %></li>
+              <li class="nav-list"><i class="fas fa-user-plus"></i><%= link_to " 新規登録", signup_path, class: "link" %></li>
+              <li class="nav-list"><i class="fas fa-sign-in-alt"></i></i><%= link_to " ログイン", login_path, class: "link" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </div>
-  <ul class="nav-item">
-    <% if logged_in? %>
-      <li class="nav-list"><i class="fas fa-home"></i><%= link_to " トップ", root_path, class: "link" %></li>
-      <li class="nav-list"><i class="fas fa-user"></i><%= link_to " マイページ", user_path(current_user), class: "link" %></li>
-      <li class="nav-list"><i class="fas fa-list-ul"></i><%= link_to " 期限管理", foods_path, class: "link" %></li>
-      <li class="nav-list"><i class="fas fa-list"></i><%= link_to " 在庫管理", items_path, class: "link" %></li>
-      <li class="nav-list">
-        <details>
-          <summary>マイメニュー</summary>
-            <div class="my-menu"><i class="fas fa-user-edit"></i><%= link_to " 登録情報変更", edit_user_path(current_user), class: "link" %></div>
-            <div class="my-menu"><i class="fas fa-sign-out-alt"></i><%= link_to " ログアウト", logout_path, method: :delete, class: "link" %></div>
-            <div class="my-menu"><i class="fas fa-user-slash"></i><%= link_to " 退会", confirm_path, class: "link" %></div>
-        </details>
-      </li>
-    <% else %>
-      <li class="nav-list"><i class="fas fa-home"></i><%= link_to " トップ", root_path, class: "link" %></li>
-      <li class="nav-list"><i class="fas fa-user-plus"></i><%= link_to " 新規登録", signup_path, class: "link" %></li>
-      <li class="nav-list"><i class="fas fa-sign-in-alt"></i></i><%= link_to " ログイン", login_path, class: "link" %></li>
-    <% end %>
-  </ul>
 </div>
