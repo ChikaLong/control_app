@@ -12,6 +12,7 @@ class SearchesController < ApplicationController
     end
     @food_categories = FoodCategory.all
     @food = Food.new
+    @user = User.find(current_user.id)
   end
 
   def item_category_search
@@ -25,5 +26,6 @@ class SearchesController < ApplicationController
     end
     @item_categories = ItemCategory.all
     @item = Item.new
+    @user = User.find(current_user.id)
   end
 end
