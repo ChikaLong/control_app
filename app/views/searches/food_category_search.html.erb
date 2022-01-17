@@ -1,9 +1,12 @@
 <div class="row">
   <div class="col">
-    <h2>期限管理</h2>
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5>期限管理</h5>
 
-    <%= render "foods/categories", food_categories: @food_categories %>
-    <span>絞り込み＞<%= @food_category.name %></span>
+    <div class="mt-4">
+      <%= render "foods/categories", food_categories: @food_categories %>
+      <span>絞り込み＞<%= @food_category.name %></span>
+    </div>
 
     <% if @foods.empty? %>
       <div class="my-4">このカテゴリに該当する商品の登録がありません</div>

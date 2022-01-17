@@ -2,6 +2,8 @@
   <div class="offset-2 col-8">
     <h2 class="text-center">ログイン</h2>
 
+    <div><p class="text-danger"><%= alert %></p></div>
+
     <%= form_with scope: :session, url: login_path, remote: true do |f| %>
       <div class="form-group">
         <%= f.label :email, "メールアドレス" %>
@@ -17,6 +19,7 @@
         <%= f.submit "ログイン", class: "btn form-btn" %>
       </div>
     <% end %>
+    <div class="text-center">登録が済んでいない方は<%= link_to "こちら", signup_path %></div>
   </div>
 </div>
 

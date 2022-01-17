@@ -1,0 +1,10 @@
+<% if food.errors.any? %>
+  <div class="alert alert-danger">
+    <h4 class="alert-heading"><%= food.errors.count %>件のエラーが発生しています</h4>
+    <% food.errors.full_messages.each do |message| %>
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

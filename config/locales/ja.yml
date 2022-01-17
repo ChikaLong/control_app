@@ -7,6 +7,29 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+
+    models:
+      user: ユーザー
+      food: 食材
+      item: 在庫
+    attributes:
+      user:
+        name: ニックネーム
+        email: メールアドレス
+        password: パスワード
+      food:
+        name: 商品名
+        start_time: 期限
+        food_category: カテゴリ
+      item:
+        name: 商品名
+        quantity: 在庫数
+        item_category: カテゴリ
+      food_category:
+        name: カテゴリ
+      item_category:
+        name: カテゴリ
+
   date:
     abbr_day_names:
     - 日
@@ -119,7 +142,7 @@ ja:
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
       inclusion: は一覧にありません
-      invalid: は不正な値です
+      invalid: は正しく入力してください
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -142,9 +165,9 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録する
-      submit: 保存する
-      update: 更新する
+      create: 登録
+      submit: 保存
+      update: 更新
   number:
     currency:
       format:

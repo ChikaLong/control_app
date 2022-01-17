@@ -1,8 +1,13 @@
 <div class="row">
   <div class="col">
-    <h2>期限管理</h2>
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5>期限管理</h5>
 
-    <%= render "foods/categories", food_categories: @food_categories %>
+    <%= render "foods/error", food: @food %>
+
+    <div class="mt-4">
+      <%= render "foods/categories", food_categories: @food_categories %>
+    </div>
 
     <div class="sort-item mb-2">
       <%= link_to "期限の短い順", foods_path(sort_short_foods: "true"), class: "btn sort-btn" %>

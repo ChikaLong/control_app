@@ -5,5 +5,7 @@
     <%= render "users/error", user: @user %>
 
     <%= render "users/form", user: @user %>
+
+    <div class="text-center"><%= link_to "←マイページに戻る", user_path(current_user) %></div>
   </div>
 </div>
