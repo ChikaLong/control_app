@@ -15,7 +15,11 @@
         <td><%= attachment_image_tag food, :image, :fill,50,50, fallback: "no-image.png", size: "50x50" %></td>
         <td><%= link_to food.name, food_path(food) %></td>
         <td><%= food.food_category.name %></td>
-        <td><%= food.start_time.strftime('%Y/%m/%d') %></td>
+        <% if food.start_time < Time.current.since(7.days) %>
+          <td class="text-danger"><%= food.start_time.strftime('%Y/%m/%d') %></td>
+        <% else %>
+          <td><%= food.start_time.strftime('%Y/%m/%d') %></td>
+        <% end %>
         <td><%= truncate(food.memo, length: 10) %></td>
         <td><%= link_to "修正", edit_food_path(food), class: "btn edit-btn" %></td>
         <td><%= link_to "削除", food_path(food), method: :delete, data: { confirm: "削除しますか？" }, class: "btn delete-btn" %></td>
