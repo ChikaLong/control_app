@@ -1,0 +1,39 @@
+<div class="row main-item mt-5">
+  <div class="col">
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5 class="mb-5">期限管理＞登録内容詳細</h5>
+
+    <div class="row">
+      <div class="col-3">
+        <%= attachment_image_tag @food, :image, :fill,150,150, fallback: "no-image.png", size: "150x150" %>
+      </div>
+      <div class="col-9">
+        <h2><%= @food.name %></h2>
+      </div>
+    </div>
+
+    <table class="table mt-4">
+      <tr>
+        <th>カテゴリ</th>
+        <td><%= @food.food_category.name %></td>
+      </tr>
+      <tr>
+        <th>期限</th>
+        <td><%= @food.start_time.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <tr>
+        <th style="width: 20%;">メモ</th>
+        <td style="width: 80%;"><%= @food.memo %></td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <%= link_to "修正", edit_food_path(@food), class: "btn edit-btn mr-2" %>
+          <%= link_to "削除", food_path(@food), method: :delete, data: { confirm: "削除しますか？" }, class: "btn delete-btn ml-2" %>
+        </td>
+      </tr>
+    </table>
+
+    <%= link_to "←戻る", foods_path %>
+  </div>
+</div>
+

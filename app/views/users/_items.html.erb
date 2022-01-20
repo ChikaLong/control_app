@@ -1,0 +1,28 @@
+<div class="row mt-5">
+  <div class="col">
+    <h3>在庫の少ないものはありませんか？</h3>
+
+    <div><%= link_to "在庫の管理画面へ行く＞", items_path %></div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>商品名</th>
+          <th>カテゴリ</th>
+          <th>在庫</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.each do |item| %>
+          <tr>
+            <td><%= attachment_image_tag item, :image, :fill,50,50, fallback: "no-image.png", size: "50x50" %></td>
+            <td><%= link_to item.name, item_path(item) %></td>
+            <td><%= item.item_category.name %></td>
+            <td><%= item.quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

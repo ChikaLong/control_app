@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col text-center">
+    <h1>食在管理</h1>
+
+    <div class="top-text">
+      <div class="p-4">
+        <h4>食品の賞味・消費期限</h4>
+        <p>気づいたら期限が切れていた</p>
+        <p>同じ食材を買っていた</p>
+      </div>
+      <div class="p-4">
+        <h4>日用品などの在庫</h4>
+        <p>あると思ったのになかった</p>
+        <p>今家にどのくらい残っていたっけ？</p>
+      </div>
+    </div>
+
+    <div><i class="fas fa-arrow-down fa-2x"></i></div>
+
+    <h4 class="py-4">お家の中のものを「食在管理」で管理しませんか？</h4>
+
+    <% unless logged_in? %>
+      <div class="row" style="justify-content: center;">
+        <div class="m-3"><%= link_to "新規登録", signup_path, class: "btn form-btn" %></div>
+        <div class="m-3"><%= link_to "ログイン", login_path, class: "btn form-btn" %></div>
+      </div>
+    <% end %>
+
+    <div class="description">
+      <h4 class="mt-5">＜使い方＞</h4>
+      <h5 class="mt-4">〜食品の賞味・消費期限の管理〜</h5>
+      <div class="row mt-2">
+        <div class="col">
+          <div>食品の名前と期限・カテゴリを入力します<br>（適宜画像・メモも入れられます）</div>
+          <div><%= image_tag 'food1.jpg', size: "330x200" %></div>
+        </div>
+        <div class="col">
+          <div>マイページのカレンダーに反映されるため<br>一目でどの食品がいつまでなのかわかります</div>
+          <div><%= image_tag 'food2.jpg', size: "330x200" %></div>
+        </div>
+      </div>
+      <h5 class="mt-5">〜日用品などの在庫管理〜</h5>
+      <div class="row mt-2 mb-5">
+        <div class="col">
+          <div>商品の名前と在庫数・カテゴリを入力します<br>（適宜画像・メモも入れられます）</div>
+          <div><%= image_tag 'item1.jpg', size: "330x200" %></div>
+        </div>
+        <div class="col">
+          <div>マイページに在庫の少ない商品が表示されます<br>適宜在庫を補充してください</div>
+          <div><%= image_tag 'item2.jpg', size: "330x200" %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

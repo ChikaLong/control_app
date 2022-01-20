@@ -1,0 +1,10 @@
+<% if user.errors.any? %>
+  <div class="alert alert-danger">
+    <h4 class="alert-heading"><%= user.errors.count %>件のエラーです</h4>
+    <% user.errors.full_messages.each do |message| %>
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col">
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5>在庫管理</h5>
+
+    <%= render "items/error", item: @item %>
+
+    <div class="mt-4">
+      <%= render "items/categories", item_categories: @item_categories %>
+    </div>
+
+    <div class="sort-item mb-2">
+      <%= link_to "在庫少ない順", items_path(sort_few_items: "true"), class: "btn sort-btn" %>
+      <%= link_to "在庫多い順", items_path(sort_many_items: "true"), class: "btn sort-btn" %>
+    </div>
+
+    <%= render "items/list", items: @items %>
+
+    <%= link_to "←マイページに戻る", user_path(current_user) %>
+
+    <Hr class="my-5">
+
+    <%= render "items/form", item: @item %>
+  </div>
+</div>

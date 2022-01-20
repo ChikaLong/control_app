@@ -1,0 +1,202 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500&display=swap');
+
+$cHover: #FFC890;
+$cLink: black;
+$cHeaderTop: #FDCB8E;
+$cHeaderBottom: #FFFFFF;
+$cEditBtn: #80CE03;
+$cDeleteBtn: #E32904;
+$cFormBtn: #E17C02;
+$cSortBtn: #616262;
+
+*{
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+h5{
+  border-bottom: 4px solid $cHeaderTop;
+  display: inline-block;
+}
+
+.container-fluid{
+  background-color:	#FFFFF0;
+}
+
+// ヘッダーのレイアウト
+
+.header{
+  // background: -moz-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  // background: -webkit-linear-gradient(top, $cHeaderTop, $cHeaderBottom);
+  // background: linear-gradient(to bottom, $cHeaderTop, $cHeaderBottom);
+  background-image: url(orange2.png);
+  background-size: cover;
+  z-index: 2;
+}
+
+.header-back{
+  background-color: white;
+  z-index: 1;
+}
+
+.header-logo{
+  text-align: center;
+}
+
+.nav-list{
+  list-style: none;
+  padding: 1.25rem 0 1.25rem 0;
+
+  & .link{
+    color: $cLink;
+  }
+}
+
+.my-menu{
+  padding: 0.5rem;
+}
+
+// topページ
+.top-text{
+  display: flex;
+  justify-content: center;
+}
+
+.description{
+  background-color: #FFE4C4;
+  padding-bottom: 1rem;
+}
+
+// 要素が少ないページのため
+.main-item{
+  height: 100vh;
+}
+
+// ボタンのレイアウト
+.edit-btn{
+  border: 2px solid $cEditBtn !important;
+  color: $cEditBtn !important;
+
+  &:hover{
+    background-color: $cEditBtn;
+    color: white !important;
+  }
+}
+
+.delete-btn{
+  border: 2px solid $cDeleteBtn !important;
+  color: $cDeleteBtn !important;
+
+  &:hover{
+    background-color: $cDeleteBtn;
+    color: white !important;
+  }
+}
+
+.form-btn{
+  border: 2px solid $cFormBtn !important;
+  color: $cFormBtn !important;
+
+  &:hover{
+    background-color: $cFormBtn;
+    color: white !important;
+  }
+}
+
+.sort-btn{
+  border: 1px solid $cSortBtn !important;
+  color: $cSortBtn !important;
+
+  &:hover{
+    background-color: $cSortBtn;
+    color: white !important;
+  }
+}
+
+.sort-item,
+.user-name{
+  text-align: right;
+}
+
+.category-btn{
+  background-color: white;
+  padding: 0.3rem 1.2rem;
+  border: 1.5px solid black;
+  border-radius: 5px;
+
+  &__list{
+    text-align: center;
+  }
+
+  &__item{
+    padding: 5px 0;
+
+    &:hover{
+      background-color: $cHover;
+    }
+
+    & .link{
+      color: $cLink;
+    }
+  }
+}
+
+// ページネーション
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  color: #808080;
+}
+
+// エラーメッセージ
+.alert-danger{
+  display: inline-block;
+}
+
+// レスポンシブ
+@media screen and (max-width: 991px){
+  .body{
+    position: relative;
+  }
+
+  main{
+    padding-top: 170px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .header-logo{
+    text-align: start;
+  }
+
+  .header-nav{
+    align-self: center;
+    text-align: end;
+  }
+}

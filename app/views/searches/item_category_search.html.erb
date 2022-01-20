@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5>在庫管理</h5>
+
+    <div class="mt-4">
+      <%= render "items/categories", item_categories: @item_categories %>
+      <span>絞り込み＞<%= @item_category.name %></span>
+    </div>
+
+    <% if @items.empty? %>
+      <div class="my-4">このカテゴリに該当する商品の登録がありません</div>
+    <% else %>
+      <div class="sort-item mb-2">
+        <%= link_to "在庫少ない順", item_category_search_path(sort_few_items: "true", item_category_id: @item_category.id), class: "btn sort-btn" %>
+        <%= link_to "在庫多い順", item_category_search_path(sort_many_items: "true", item_category_id: @item_category.id), class: "btn sort-btn" %>
+      </div>
+
+      <%= render "items/list", items: @items %>
+    <% end %>
+
+    <%= link_to "←一覧へ戻る", items_path %>
+
+    <Hr class="my-5">
+
+    <%= render "items/form", item: @item %>
+  </div>
+</div>

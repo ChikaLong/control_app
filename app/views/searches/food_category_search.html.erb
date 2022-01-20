@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <div class="user-name"><%= @user.name %>さん</div>
+    <h5>期限管理</h5>
+
+    <div class="mt-4">
+      <%= render "foods/categories", food_categories: @food_categories %>
+      <span>絞り込み＞<%= @food_category.name %></span>
+    </div>
+
+    <% if @foods.empty? %>
+      <div class="my-4">このカテゴリに該当する商品の登録がありません</div>
+    <% else %>
+      <div class="sort-item mb-2">
+        <%= link_to "期限の短い順", food_category_search_path(sort_short_foods: "true", food_category_id: @food_category.id), class: "btn sort-btn" %>
+        <%= link_to "期限の長い順", food_category_search_path(sort_long_foods: "true", food_category_id: @food_category.id), class: "btn sort-btn" %>
+      </div>
+
+      <%= render "foods/list", foods: @foods %>
+    <% end %>
+
+    <%= link_to "←一覧へ戻る", foods_path %>
+
+    <Hr class="my-5">
+
+    <%= render "foods/form", food: @food %>
+  </div>
+</div>
