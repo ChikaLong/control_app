@@ -1,24 +1,35 @@
-# README
+# **食在管理**
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## **サイト概要**
 
-Things you may want to cover:
+食材の賞味(消費)期限管理<br>
+家の中の物の在庫管理
 
-* Ruby version
+---
 
-* System dependencies
+### **背景**
 
-* Configuration
+冷蔵庫の食品がいつの間にか期限が切れていた・・・<br>
+あれを買っておいたかどうか覚えていない・・・<br>
+などといったことを解決するために、食品の賞味期限や家の中のものの在庫管理などが簡単にできるようになりたいと思いました。
 
-* Database creation
+---
 
-* Database initialization
+### **サイトについて**
 
-* How to run the test suite
+期限の管理では期限を入力することで、マイページのカレンダーに表示されます。<br>
+また、一覧で期限が1週間後に迫っているものは赤文字で表示されます。<br>
+一目で期限が近いことが確認できます。<br>
+在庫管理では、在庫数を入力して管理します。<br>
+マイページには在庫の少ないものが表示されます。
 
-* Services (job queues, cache servers, search engines, etc.)
+---
 
-* Deployment instructions
+### **開発環境**
 
-* ...
+* IDE：Cloud9
+* 言語：HTML,CSS,JavaScript,Ruby
+* フレームワーク：Ruby on Rails
+* JS ライブラリ：jQuery
+
